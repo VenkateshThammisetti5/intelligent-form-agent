@@ -64,91 +64,73 @@ The system operates through a **three-tier pipeline**:
 ### Install Dependencies
 
 ```bash
-pip install streamlit pymupdf groq
+Intelligent Form Agent Documentation
+This guide provides the necessary steps to configure, run, and utilize the Intelligent Form Agent application.
 
-The application reads the API key from the environment variable GROQ_API_KEY.
+1. Configure API Key
+The application requires an API key to communicate with the Groq inference engine. It reads this from the GROQ_API_KEY environment variable.
 
-Windows
+Windows (Command Prompt)
+DOS
+
 set GROQ_API_KEY=gsk_your_key_here
+Linux / macOS (Terminal)
+Bash
 
-Linux / macOS
 export GROQ_API_KEY=gsk_your_key_here
+2. How to Run (Step-by-Step)
+Navigate to the Project Root
 
-How to Run (Step-by-Step)
-
-Navigate to the project root directory:
+Bash
 
 cd intelligent-form-agent
+Launch the Orchestrator
 
-
-Launch the orchestrator:
+Bash
 
 python src/run.py
-
-
-Open your browser and access:
+Access the Application Open your browser and visit:
 
 http://localhost:8501
 
-Example Queries & Expected Outputs
+3. Example Queries & Expected Outputs
 Standard Identity Forms (Aadhaar)
-
-Action:
-Upload an Aadhaar PDF and click Extract All Data
+Action: Upload an Aadhaar PDF and click Extract All Data
 
 Expected Output:
 
 Aadhaar Number: 1234-5678-9012
+
 Resident Name: John Doe
+
 Gender: Male
+
 DOB: 01/01/1990
+
 Address: 123 Maple St, Delhi
 
 Generic Forms (Hospital / Bank)
+Query: Summarize this medical report
 
-Query:
+Output: A 3–4 point summary where each line starts with -.
 
-Summarize this medical report
+Query: What is the patient's blood pressure?
 
+Output: Specific value from the document (e.g., 120/80 mmHg) or Information not found.
 
-Output:
+Query: Extract all information
 
-3–4 point summary
+Output: A clean list of all detected key-value pairs.
 
-Each line starts with -
-
-Query:
-
-What is the patient's blood pressure?
-
-
-Output:
-
-Specific value from the document
-
-Or: Information not found
-
-Query:
-
-Extract all information
-
-
-Output:
-
-Clean list of all detected key-value pairs
-
-Design Notes
-
+4. Design Notes
 Strict Mode Rules
+Logic: Hospital and bank forms are strictly rejected when the agent is set to Standard Identity Mode.
 
-Hospital and bank forms are rejected in Standard Identity Mode
-
-Prevents data contamination
+Benefit: This prevents data contamination and ensures the agent uses the correct extraction logic for specific document types.
 
 Zero Temperature
+Setting: The LLM temperature is set to 0.
 
-LLM temperature is set to 0
+Accuracy: This ensures deterministic output (the same input always results in the same output).
 
-Ensures deterministic and accurate extraction
-
-Prevents hallucinations in sensitive data
+Safety: Prevents "hallucinations" (fictional data) which is critical when handling sensitive personal or financial information.
