@@ -29,13 +29,17 @@ Ensure you have **Python 3.9+** installed and a **Groq API Key**.
 Install the necessary dependencies using pip:
 bash
 pip install streamlit pymupdf groq
+
 Use code with caution.
 
-2. Configure API Key
-The application requires a GROQ_API_KEY set in your environment variables. Replace gsk_your_key_here with your actual key.
+3. Configure API Key
+The application requires a GROQ_API_KEY set in your environment variables.
+ Replace gsk_your_key_here with your actual key.
+
 Windows (Command Prompt):
 dos
 set GROQ_API_KEY=gsk_your_key_here
+
 Use code with caution.
 
 Linux / macOS:
@@ -55,10 +59,13 @@ python src/run.py
 Use code with caution.
 
 Access the Agent: Open your browser and visit: http://localhost:8501
+
 4. Project Demonstration
+   
 Due to file size constraints, the demo video is hosted externally.
 📽 Watch the demo here
-5. Example Queries & Expected Outputs
+
+6. Example Queries & Expected Outputs
 Standard Identity Forms
 Action: Upload an Aadhaar PDF and click "Extract All Data".
 Expected Output:
