@@ -40,3 +40,42 @@ set GROQ_API_KEY=gsk_your_key_here
 ```bash
 export GROQ_API_KEY=gsk_your_key_here
 
+How to Run (Step-by-Step)
+Navigate to Project Root Open your terminal in the intelligent-form-agent folder:
+
+Bash
+
+cd intelligent-form-agent
+Launch the Orchestrator Run the run.py file, which automatically triggers the Streamlit server:
+
+Bash
+
+python src/run.py
+Access the Agent Open your browser and visit: http://localhost:8501
+
+--- PROJECT DEMONSTRATION --- T
+he video demonstration is hosted on Google Drive due to file size limits. Watch here:https://drive.google.com/drive/folders/1CXrDwjhDQdUTGpgfOqx7nZkm6Gh9-jVp?usp=sharing
+
+Example Queries & Expected Outputs Standard Identity Forms: Action: Upload an Aadhaar PDF and click "Extract All Data". Expected Output:
+text Aadhaar Number: 1234-5678-9012 Resident Name: John Doe Gender: Male DOB: 01/01/1990 Address: 123 Maple St, Delhi
+
+Generic Forms (Hospital/Bank)
+
+Query: "Summarize this medical report".
+
+Output: A 3-to-4 point summary list starting with dashes.
+
+Query: "What is the patient's blood pressure?".
+
+Output: The specific value from the document or "Information not found".
+
+Query: "Extract all information".
+
+Output: A clean list of every key-value pair found in the document.
+
+Design Notes:
+
+Strict Mode Rules: The agent is instructed to reject hospital or bank forms in the Standard tab to prevent data contamination.
+
+Zero Temperature: The LLM is set to temperature=0 to ensur
+
