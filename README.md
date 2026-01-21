@@ -53,8 +53,12 @@ Bash
 python src/run.py
 Access the Agent Open your browser and visit: http://localhost:8501
 
---- PROJECT DEMONSTRATION --- T
-he video demonstration is hosted on Google Drive due to file size limits. Watch here:https://drive.google.com/drive/folders/1CXrDwjhDQdUTGpgfOqx7nZkm6Gh9-jVp?usp=sharing
+Project Demonstration
+
+Due to file size constraints, the demo video is hosted externally.
+
+📽 Watch the demo here:
+https://drive.google.com/drive/folders/1CXrDwjhDQdUTGpgfOqx7nZkm6Gh9-jVp?usp=sharing
 
 Example Queries & Expected Outputs Standard Identity Forms: Action: Upload an Aadhaar PDF and click "Extract All Data". Expected Output:
 text Aadhaar Number: 1234-5678-9012 Resident Name: John Doe Gender: Male DOB: 01/01/1990 Address: 123 Maple St, Delhi
