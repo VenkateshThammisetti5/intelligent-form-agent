@@ -20,26 +20,21 @@ The system operates through a structured three-tier pipeline:
 
 ---
 
-## Environment Setup
-
-### 1. Prerequisite
-Ensure you have **Python 3.9+** installed and a **Groq API Key**.
-
-1. Installation
+🛠 Environment Setup
+1. Prerequisites
+Python 3.9+
+Groq API Key: Obtain one from the Groq Cloud Console.
+2. Installation
 Install the necessary dependencies using pip:
 bash
 pip install streamlit pymupdf groq
-
 Use code with caution.
 
 3. Configure API Key
-The application requires a GROQ_API_KEY set in your environment variables.
- Replace gsk_your_key_here with your actual key.
-
+The application looks for the GROQ_API_KEY in your environment variables. Replace gsk_your_key_here with your actual key.
 Windows (Command Prompt):
-dos
+cmd
 set GROQ_API_KEY=gsk_your_key_here
-
 Use code with caution.
 
 Linux / macOS:
@@ -47,25 +42,27 @@ bash
 export GROQ_API_KEY=gsk_your_key_here
 Use code with caution.
 
-3. How to Run (Step-by-Step)
-Navigate to Project Root: Open your terminal in the project folder.
+🚀 How to Run (Step-by-Step)
+Navigate to Project Root
+Open your terminal in the project folder:
 bash
 cd intelligent-form-agent
 Use code with caution.
 
-Launch the Orchestrator: Run the run.py file to automatically trigger the Streamlit server.
+Launch the Orchestrator
+Run the run.py file, which automatically triggers the Streamlit server:
 bash
 python src/run.py
 Use code with caution.
 
-Access the Agent: Open your browser and visit: http://localhost:8501
+Access the Agent
+Open your browser and visit: http://localhost:8501
 
-4. Project Demonstration
-   
+📺 Project Demonstration
 Due to file size constraints, the demo video is hosted externally.
-📽 Watch the demo here
+📽 Watch the Demo here:https://drive.google.com/file/d/1J6rkpziZbjxXUGUkkAIF9SbcGhSHqNgP/view?usp=sharing
 
-6. Example Queries & Expected Outputs
+📄 Example Queries & Expected Outputs
 Standard Identity Forms
 Action: Upload an Aadhaar PDF and click "Extract All Data".
 Expected Output:
@@ -78,15 +75,15 @@ Address: 123 Maple St, Delhi
 Use code with caution.
 
 Generic Forms (Hospital/Bank)
-Query: "Summarize this medical report"
-Output: A 3-to-4 point summary list starting with dashes.
-Query: "What is the patient's blood pressure?"
-Output: The specific value from the document or "Information not found".
-Query: "Extract all information"
-Output: A clean list of every key-value pair found in the document.
-6. Design Notes
-Strict Mode Rules: The agent is instructed to reject hospital or bank forms in the "Standard" tab to prevent data contamination.
-Zero Temperature: The LLM is set to temperature=0 to ensure high accuracy and consistent, factual responses.
+
+User Query	Expected Output
+"Summarize this medical report"	A 3-to-4 point bulleted list summarizing key findings.
+"What is the patient's blood pressure?"	Specific value (e.g., 120/80 mmHg) or "Information not found".
+"Extract all information"	A clean list of every key-value pair detected in the document.
+
+⚙️ Design Notes
+Strict Mode Rules: The agent is hard-coded to reject hospital or bank forms when uploaded to the "Standard Identity" tab. This prevents data contamination and ensures the correct extraction logic is applied.
+Zero Temperature: The LLM is configured with temperature=0. This ensures deterministic, factual responses and eliminates "hallucinations" or creative variations in data extraction.
 
 
 
