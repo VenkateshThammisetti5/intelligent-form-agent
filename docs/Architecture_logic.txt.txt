@@ -1,0 +1,13 @@
+AGENT ARCHITECTURE LOGIC:
+
+1. FRONTEND(Streamlit): 
+I used a 'Two-Tile' layout to separate Standard Forms from  Other Forms. This makes the UX cleaner than a basic chat app.
+
+2. EXTRACTION LAYER(PyMuPDF): 
+Instead of complex OCR,I used PyMuPDF(fitz) because it  preserves the 'reading order' of text better, which helps the  LLM understand unstructured fields like footers or sidebars.
+
+3. CONTEXT AGGREGATOR: 
+When multiple files are uploaded, my code wraps each one in explicit markers ([DOC 1], [DOC 2]). This is the secret to getting 'Holistic Insights' across different files without the LLM getting confused.
+
+4. REASONING ENGINE(Groq+Llama3.1): 
+I offloaded the explanation and summarization to Groq.  By setting the temperature to 0.1, I forced the model to stop being creative and stick to the facts found in the PDFs.

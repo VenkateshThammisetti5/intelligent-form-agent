@@ -1,0 +1,3 @@
+.env 
+groq-env/ 
+__pycache__/ 
