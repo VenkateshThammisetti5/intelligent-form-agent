@@ -41,3 +41,11 @@ Linux / macOS,export GROQ_API_KEY=gsk_your_key_here
 Execution Guide
 Navigate to Project Root
 cd intelligent-form-agent
+
+Start the application
+python src/run.py
+
+Open the browser
+http://localhost:8501
+
+### 3.Access the Dashboard URL: http://localhost:8501
