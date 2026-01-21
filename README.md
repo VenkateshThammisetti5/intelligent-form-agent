@@ -25,61 +25,61 @@ The system operates through a structured three-tier pipeline:
 ### 1. Prerequisite
 Ensure you have **Python 3.9+** installed and a **Groq API Key**.
 
-### 2. Install Dependencies
-Install the required libraries for PDF processing, UI, and API communication:
-```bash
+1. Installation
+Install the necessary dependencies using pip:
+bash
 pip install streamlit pymupdf groq
-### 3. Configure API Key
-The application looks for the `GROQ_API_KEY` in your environment variables:
+Use code with caution.
 
-**Windows (Command Prompt)**
-```dos
+2. Configure API Key
+The application requires a GROQ_API_KEY set in your environment variables. Replace gsk_your_key_here with your actual key.
+Windows (Command Prompt):
+dos
 set GROQ_API_KEY=gsk_your_key_here
+Use code with caution.
 
-### Linux / macOS
-```bash
+Linux / macOS:
+bash
 export GROQ_API_KEY=gsk_your_key_here
+Use code with caution.
 
-How to Run (Step-by-Step)
-Navigate to Project Root Open your terminal in the intelligent-form-agent folder:
-
-Bash
-
+3. How to Run (Step-by-Step)
+Navigate to Project Root: Open your terminal in the project folder.
+bash
 cd intelligent-form-agent
-Launch the Orchestrator Run the run.py file, which automatically triggers the Streamlit server:
+Use code with caution.
 
-Bash
-
+Launch the Orchestrator: Run the run.py file to automatically trigger the Streamlit server.
+bash
 python src/run.py
-Access the Agent Open your browser and visit: http://localhost:8501
+Use code with caution.
 
-Project Demonstration
-
+Access the Agent: Open your browser and visit: http://localhost:8501
+4. Project Demonstration
 Due to file size constraints, the demo video is hosted externally.
-
-📽 Watch the demo here:
-https://drive.google.com/drive/folders/1CXrDwjhDQdUTGpgfOqx7nZkm6Gh9-jVp?usp=sharing
-
-Example Queries & Expected Outputs Standard Identity Forms: Action: Upload an Aadhaar PDF and click "Extract All Data". Expected Output:
-text Aadhaar Number: 1234-5678-9012 Resident Name: John Doe Gender: Male DOB: 01/01/1990 Address: 123 Maple St, Delhi
+📽 Watch the demo here
+5. Example Queries & Expected Outputs
+Standard Identity Forms
+Action: Upload an Aadhaar PDF and click "Extract All Data".
+Expected Output:
+text
+Aadhaar Number: 1234-5678-9012
+Resident Name: John Doe
+Gender: Male
+DOB: 01/01/1990
+Address: 123 Maple St, Delhi
+Use code with caution.
 
 Generic Forms (Hospital/Bank)
-
-Query: "Summarize this medical report".
-
+Query: "Summarize this medical report"
 Output: A 3-to-4 point summary list starting with dashes.
-
-Query: "What is the patient's blood pressure?".
-
+Query: "What is the patient's blood pressure?"
 Output: The specific value from the document or "Information not found".
-
-Query: "Extract all information".
-
+Query: "Extract all information"
 Output: A clean list of every key-value pair found in the document.
+6. Design Notes
+Strict Mode Rules: The agent is instructed to reject hospital or bank forms in the "Standard" tab to prevent data contamination.
+Zero Temperature: The LLM is set to temperature=0 to ensure high accuracy and consistent, factual responses.
 
-Design Notes:
 
-Strict Mode Rules: The agent is instructed to reject hospital or bank forms in the Standard tab to prevent data contamination.
-
-Zero Temperature: The LLM is set to temperature=0 to ensur
 
