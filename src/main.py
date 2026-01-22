@@ -5,7 +5,7 @@ from llm import process_standard_form, process_generic_request
 st.set_page_config(layout="wide")
 st.title("📄 Multi-Form Processing Agent")
 
-# FIX: Define the tabs first so they can be referenced below
+#Define the tabs first so they can be referenced below
 tab_std, tab_gen = st.tabs(["Standard[AADHAR] Forms", "Generic Forms"])
 
 # --- TAB 1: STANDARD IDENTITY FORMS ---
@@ -28,7 +28,7 @@ with tab_std:
                     doc = fitz.open(stream=file.read(), filetype="pdf")
                     text = "".join([page.get_text() for page in doc])
                     
-                    # Call strict validator from llm.py [cite: 3-4]
+                    # Call strict validator from llm.py 
                     result = process_standard_form(text)
                     
                     # Display clean data-only output
@@ -53,7 +53,7 @@ with tab_gen:
                 combined_text += f"\n[DOC {i+1}]: " + "".join([page.get_text() for page in doc])
             
             with st.spinner("Analyzing..."):
-                # Call generic logic (Extraction + 3-4 line summary + Q&A)  [cite: 1, 5-6]
+                # Call generic logic (Extraction + 3-4 line summary + Q&A)
                 result = process_generic_request(user_query, combined_text)
                 st.markdown(result)
         else:
