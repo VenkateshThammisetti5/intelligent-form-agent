@@ -151,6 +151,14 @@ Due to file size constraints, the project demonstration video is hosted on Googl
 
 ###### 
 
+### Multi-Form Analysis (Holistic Insights)
+
+**Action:** Upload multiple PDF documents together (e.g., multiple bank or hospital forms).
+
+**Expected Output:**  
+The agent analyzes all uploaded documents collectively to generate a combined summary or answer questions using information across all forms, strictly limited to the provided documents.
+
+
 #### *Design Notes*
 
 
